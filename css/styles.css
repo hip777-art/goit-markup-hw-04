@@ -367,3 +367,12 @@ address { font-style: normal; }
   .section { padding: 60px 0; }
   .item-portfolio, .item-team { width: 100%; }
 }
+
+.overlay-text {
+  height: 100%; /* для 4-й секции */
+}
+
+.text-footer {
+  letter-spacing: 0.02em; /* для футера */
+}
+
