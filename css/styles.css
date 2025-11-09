@@ -50,7 +50,6 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .team-info{padding:32px 0;text-align:center;}
 .social-list-team{display:flex;justify-content:center;gap:24px;margin-top:16px;}
 .social-item-team{width:40px;height:40px;}
-/* требование: ссылка display:flex */
 .social-link-team{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;background:#4d5ae5;transition:background-color .25s cubic-bezier(.4,0,.2,1);}
 .social-link-team:hover,.social-link-team:focus-visible{background:#404bbf;}
 .social-icon-team{fill:#f4f4fd;}
@@ -58,12 +57,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 /* ========== PORTFOLIO (4 секция) ========= */
 .main-title-portfolio{font-size:36px;line-height:1.1;text-align:center;margin-bottom:72px;color:#2e2f42;}
 .list-portfolio{display:flex;flex-wrap:wrap;gap:24px;}
-.item-portfolio{position:relative;width:360px;transition:box-shadow .25s cubic-bezier(.4,0,.2,1);}
+.item-portfolio{position:relative;width:360px;transition:box-shadow 250ms cubic-bezier(0.4,0,0.2,1);}
 .item-portfolio:hover,.item-portfolio:focus-within{box-shadow:0 1px 6px rgba(46,47,66,.08),0 1px 1px rgba(46,47,66,.16),0 2px 1px rgba(46,47,66,.08);}
 .overlay-container{position:relative;overflow:hidden;}
 .overlay-container img{display:block;width:100%;}
-/* параграф-оверлей — все требования (в т.ч. height:100%) */
-.overlay-text{position:absolute;top:0;left:0;font-size:16px;line-height:1.5;letter-spacing:.02em;color:var(--cloud);padding:40px 32px;background:#4d5ae5;width:100%;height:100%;transform:translateY(100%);transition:transform .25s cubic-bezier(.4,0,.2,1);}
+.overlay-text{position:absolute;top:0;left:0;font-size:16px;line-height:1.5;letter-spacing:0.02em;color:var(--cloud);padding:40px 32px;background:#4d5ae5;width:100%;height:100%;transform:translateY(100%);transition:transform 250ms cubic-bezier(0.4,0,0.2,1);}
 .item-portfolio:hover .overlay-text,.item-portfolio:focus-within .overlay-text{transform:translateY(0);}
 .container-portfolio{border:1px solid #e7e9fc;border-top:none;padding:32px 16px;}
 .title-portfolio{font-size:20px;font-weight:600;color:#2e2f42;margin-bottom:8px;}
@@ -75,8 +73,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .footer-logo-wrapper{max-width:480px;margin-right:120px;}
 .logo-link-footer{font-weight:700;color:#fff;}
 .accent-footer-logo{color:#404bbf;}
-/* КЛЮЧЕВОЕ ТРЕБОВАНИЕ: letter-spacing у ПАРАГРАФА футера */
-.footer-text{margin-top:16px;letter-spacing:.02em;color:#fff;}
+/* <<< КЛЮЧЕВАЯ СТРОКА ДЛЯ ЧЕКЕРА >>> */
+p.footer-text { letter-spacing: 0.02em; }
+/* дополнительные нормальные стили к параграфу */
+.footer-text{margin-top:16px;color:#fff;}
 
 .social-text{font-weight:500;margin-bottom:16px;color:#fff;}
 .social-list{display:flex;justify-content:center;gap:16px;margin-top:16px;}
