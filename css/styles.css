@@ -163,16 +163,15 @@ address { font-style: normal; }
   text-align: left;
 }
 
-/* требования по div-иконоконтейнеру */
 .icon-benefits {
-  display: flex;                 /* центрирование и возможность менять расположение */
-  align-items: center;           /* выравнивание по вертикали */
-  justify-content: center;       /* выравнивание по горизонтали */
-  height: 112px;                 /* фиксированная высота */
-  background-color: #f4f4fd;     /* фон блока */
-  border-radius: 4px;            /* скругление */
-  border: 1px solid #8e8f99;     /* обводка */
-  margin-bottom: 8px;            /* отступ до заголовка */
+  display: flex;                 
+  align-items: center;           
+  justify-content: center;      
+  height: 112px;                 
+  background-color: #f4f4fd;     
+  border-radius: 4px;            
+  border: 1px solid #8e8f99;     
+  margin-bottom: 8px;            
 }
 .icon-benefits svg { fill: #404bbf; width: 64px; height: 64px; }
 
@@ -218,7 +217,7 @@ address { font-style: normal; }
 
 .social-item-team { width: 40px; height: 40px; }
 
-/* требование 3 секции: для посилання display:flex */
+
 .social-link-team {
   display: flex;
   align-items: center; justify-content: center;
@@ -251,7 +250,7 @@ address { font-style: normal; }
 .item-portfolio {
   position: relative;
   width: 360px;
-  /* требование: плавная тень */
+ 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-portfolio:hover,
@@ -262,11 +261,10 @@ address { font-style: normal; }
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* контейнер: скрыть переполнение */
 .overlay-container { position: relative; overflow: hidden; }
 .overlay-container img { display: block; width: 100%; }
 
-/* параграф-оверлей — все свойства из требований, включая height:100% */
+
 .overlay-text {
   position: absolute;
   top: 0; left: 0;
@@ -311,11 +309,11 @@ address { font-style: normal; }
   flex-wrap: wrap;
   gap: 24px;
 
-  /* требование футера: выравнивание baseline */
+
   align-items: baseline;
 }
 
-/* внутри footer div, который оборачивает логотип и параграф */
+
 .footer-logo-wrapper { 
   max-width: 480px; 
   margin-right: 120px; /* требование */
@@ -324,10 +322,12 @@ address { font-style: normal; }
 .logo-link-footer { font-weight: 700; color: #fff; }
 .accent-footer-logo { color: #404bbf; }
 
-.text-footer { 
-  margin-top: 16px; 
-  letter-spacing: 0.02em; /* требование */
+.text-footer {
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+  color: #fff;
 }
+
 
 .social-text {
   font-weight: 500;
@@ -375,4 +375,5 @@ address { font-style: normal; }
 .text-footer {
   letter-spacing: 0.02em; /* для футера */
 }
+
 
