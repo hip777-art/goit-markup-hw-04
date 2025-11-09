@@ -227,4 +227,9 @@ address { font-style: normal; }
   .section { padding: 60px 0; }
   .item-portfolio, .item-team { width: 100%; flex: 1 1 100%; }
 }
+/* === FIX для автопроверки футера === */
+.text-footer {
+  letter-spacing: 0.02em; /* требование: відстань між літерами */
+}
+
 
