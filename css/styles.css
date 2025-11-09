@@ -82,7 +82,6 @@ address { font-style: normal; }
   font-weight: 500;
   transition: color 250ms cubic-bezier(0.4,0,0.2,1);
 }
-
 .nav-link-header::after {
   content: '';
   position: absolute;
@@ -94,26 +93,24 @@ address { font-style: normal; }
   transform-origin: left;
   transition: transform 250ms cubic-bezier(0.4,0,0.2,1);
 }
-
 .nav-link-header:hover::after,
 .nav-link-header:focus-visible::after { transform: scaleX(1); }
-
 .nav-link-header.current { color: #404bbf; }
 .nav-link-header.current::after { transform: scaleX(1); }
 
-.address-list-header {
-  display: flex;
-  gap: 16px;
-}
-
+.address-list-header { display: flex; gap: 16px; }
 .address-link-header {
   transition: color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 .address-link-header:hover,
 .address-link-header:focus-visible { color: #404bbf; }
 
-/* ========== HERO ========= */
+/* ========== HERO (1 секция) ========= */
 .section-main {
+  /* требование 1 секции: ограничение ширины секции */
+  max-width: 1440px;
+  margin: 0 auto;
+
   min-height: 600px;
   display: flex; align-items: center; justify-content: center;
   text-align: center;
@@ -146,7 +143,7 @@ address { font-style: normal; }
 .button-main:hover,
 .button-main:focus-visible { background-color: #2e2f42; }
 
-/* ========== BENEFITS ========= */
+/* ========== BENEFITS (2 секция) ========= */
 .list-benefits {
   display: flex;
   flex-wrap: wrap;
@@ -163,17 +160,27 @@ address { font-style: normal; }
     0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
-  text-align: center;
+  text-align: left;
 }
 
-.icon-benefits svg {
-  display: block;
-  width: 64px; height: 64px;
-  margin: 0 auto 16px;
-  fill: #404bbf;
+/* требования по div-иконоконтейнеру */
+.icon-benefits {
+  display: flex;                 /* центрирование и возможность менять расположение */
+  align-items: center;           /* выравнивание по вертикали */
+  justify-content: center;       /* выравнивание по горизонтали */
+  height: 112px;                 /* фиксированная высота */
+  background-color: #f4f4fd;     /* фон блока */
+  border-radius: 4px;            /* скругление */
+  border: 1px solid #8e8f99;     /* обводка */
+  margin-bottom: 8px;            /* отступ до заголовка */
 }
+.icon-benefits svg { fill: #404bbf; width: 64px; height: 64px; }
 
-/* ========== TEAM ========= */
+/* заголовок/текст преимущества (для целостности) */
+.title-benefits { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #2e2f42; }
+.text-benefits { font-size: 16px; line-height: 1.5; color: #434455; }
+
+/* ========== TEAM (3 секция) ========= */
 .main-title-team { 
   font-size: 36px; 
   line-height: 1.1; 
@@ -200,10 +207,7 @@ address { font-style: normal; }
   width: 264px;
 }
 
-.team-info {
-  padding: 32px 0;
-  text-align: center;
-}
+.team-info { padding: 32px 0; text-align: center; }
 
 .social-list-team {
   display: flex;
@@ -214,8 +218,9 @@ address { font-style: normal; }
 
 .social-item-team { width: 40px; height: 40px; }
 
+/* требование 3 секции: для посилання display:flex */
 .social-link-team {
-  display: inline-flex;
+  display: flex;
   align-items: center; justify-content: center;
   width: 100%; height: 100%;
   border-radius: 50%;
@@ -227,7 +232,7 @@ address { font-style: normal; }
 
 .social-icon-team { fill: #f4f4fd; }
 
-/* ========== PORTFOLIO (исправлено под чекер) ========= */
+/* ========== PORTFOLIO (4 секция) ========= */
 .main-title-portfolio {
   font-size: 36px;
   line-height: 1.1;
@@ -246,11 +251,9 @@ address { font-style: normal; }
 .item-portfolio {
   position: relative;
   width: 360px;
-  /* плавная поява тіні */
+  /* требование: плавная тень */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* тень при hover/focus */
 .item-portfolio:hover,
 .item-portfolio:focus-within {
   box-shadow:
@@ -259,64 +262,41 @@ address { font-style: normal; }
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* контейнер изображения и оверлея */
-.overlay-container {
-  position: relative;
-  /* скрытие переполнения */
-  overflow: hidden;
-}
+/* контейнер: скрыть переполнение */
+.overlay-container { position: relative; overflow: hidden; }
+.overlay-container img { display: block; width: 100%; }
 
-.overlay-container img {
-  display: block;
-  width: 100%;
-  border-radius: 0; /* можно убрать радиус, чтобы оверлей совпадал по краям */
-}
-
-/* параграф-оверлей */
+/* параграф-оверлей — все свойства из требований, включая height:100% */
 .overlay-text {
   position: absolute;
-  top: 0;        /* прилипает к верху */
-  left: 0;
+  top: 0; left: 0;
 
-  font-size: 16px;          /* типографика */
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--cloud);
 
-  padding: 40px 32px;       /* внутренние отступы */
-  background-color: #4d5ae5;/* фон */
+  padding: 40px 32px;
+  background-color: #4d5ae5;
 
-  width: 100%;              /* во всю ширину */
-  height: 100%;             /* во всю высоту */
+  height: 100%;
+  width: 100%;
 
-  transform: translateY(100%); /* спрятан снизу */
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); /* анимация */
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* показ оверлея */
 .item-portfolio:hover .overlay-text,
-.item-portfolio:focus-within .overlay-text {
-  transform: translateY(0);
-}
+.item-portfolio:focus-within .overlay-text { transform: translateY(0); }
 
-/* контейнер с подписями */
+/* подписи */
 .container-portfolio {
   border: 1px solid #e7e9fc;
   border-top: none;
   padding: 32px 16px;
 }
-
-.title-portfolio {
-  font-size: 20px;
-  font-weight: 600;
-  color: #2e2f42;
-  margin-bottom: 8px;
-}
-
-.text-portfolio {
-  font-size: 16px;
-  color: #404bbf;
-}
+.title-portfolio { font-size: 20px; font-weight: 600; color: #2e2f42; margin-bottom: 8px; }
+.text-portfolio  { font-size: 16px; color: #404bbf; }
 
 /* ========== FOOTER ========= */
 .page-footer {
@@ -330,14 +310,24 @@ address { font-style: normal; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
+
+  /* требование футера: выравнивание baseline */
+  align-items: baseline;
 }
 
-.footer-logo-wrapper { max-width: 480px; }
+/* внутри footer div, который оборачивает логотип и параграф */
+.footer-logo-wrapper { 
+  max-width: 480px; 
+  margin-right: 120px; /* требование */
+}
 
 .logo-link-footer { font-weight: 700; color: #fff; }
 .accent-footer-logo { color: #404bbf; }
 
-.text-footer { margin-top: 16px; }
+.text-footer { 
+  margin-top: 16px; 
+  letter-spacing: 0.02em; /* требование */
+}
 
 .social-text {
   font-weight: 500;
@@ -348,12 +338,13 @@ address { font-style: normal; }
 .social-list {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 16px; /* требование списка: gap 16px */
   margin-top: 16px;
 }
 
+/* требование футера: для посилання display:flex и смена bg на #31d0aa при hover/focus */
 .social-link {
-  display: inline-flex;
+  display: flex;
   width: 40px; height: 40px;
   border-radius: 50%;
   background-color: #4d5ae5;
@@ -361,7 +352,7 @@ address { font-style: normal; }
   transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
 .social-link:hover,
-.social-link:focus-visible { background-color: #404bbf; }
+.social-link:focus-visible { background-color: #31d0aa; }
 
 .social-icon { fill: #f4f4fd; }
 
@@ -376,4 +367,3 @@ address { font-style: normal; }
   .section { padding: 60px 0; }
   .item-portfolio, .item-team { width: 100%; }
 }
-
