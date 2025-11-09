@@ -360,3 +360,8 @@ address { font-style: normal; }
   .section { padding: 60px 0; }
   .item-portfolio, .item-team { width: 100%; }
 }
+
+
+.text-footer {
+  letter-spacing: 0.02em; 
+}
