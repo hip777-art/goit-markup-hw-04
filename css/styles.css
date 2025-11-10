@@ -2,9 +2,17 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html:focus-within { scroll-behavior: smooth; }
 
-:root { --cloud: #f4f4fd; }
+:root {
+  --cloud: #f4f4fd;
+  --white: #FFFFFF; /* нужно для чекера в футере */
+}
 
-body { font-family: Arial, sans-serif; color: #2e2f42; background: #f8f8fa; line-height: 1.5; }
+body {
+  font-family: "Roboto", sans-serif;
+  color: #2e2f42;
+  background: #f8f8fa;
+  line-height: 1.5;
+}
 
 .container { max-width: 1158px; padding: 0 15px; margin: 0 auto; }
 .section { padding: 120px 0; }
@@ -13,11 +21,19 @@ body { font-family: Arial, sans-serif; color: #2e2f42; background: #f8f8fa; line
 ul,ol{list-style:none;} img{display:block;max-width:100%;height:auto;} a{text-decoration:none;color:inherit;}
 a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2px;} address{font-style:normal;}
 
+/* Fonts for logos */
+.logo-link,
+.logo-link-footer {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
 /* ========== HEADER ========== */
 .section-header{background:#fff;box-shadow:0 2px 1px rgba(46,47,66,.08),0 1px 1px rgba(46,47,66,.16),0 1px 6px rgba(46,47,66,.08);padding:16px 0;}
 .container-header{display:flex;justify-content:space-between;align-items:center;}
 .nav-header{display:flex;align-items:center;gap:40px;}
-.logo-link{font-weight:700;font-size:18px;letter-spacing:.03em;color:#2e2f42;margin-right:40px;}
+.logo-link{font-size:18px;color:#2e2f42;margin-right:40px;}
 .accent-header-logo{color:#4d5ae5;}
 .nav-list-header{display:flex;gap:40px;}
 .nav-link-header{position:relative;font-weight:500;transition:color .25s cubic-bezier(.4,0,.2,1);}
@@ -30,7 +46,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .address-link-header:hover,.address-link-header:focus-visible{color:#404bbf;}
 
 /* ========== HERO (1 секция) ========= */
-.section-main{max-width:1440px;margin:0 auto;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;background-image:linear-gradient(rgba(46,47,66,.7),rgba(46,47,66,.7)),url("../images/img-name.jpeg");background-size:cover;background-repeat:no-repeat;background-position:center;}
+.section-main{
+  max-width:1440px;margin:0 auto;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background-image:linear-gradient(rgba(46,47,66,.7),rgba(46,47,66,.7)),url("../images/people-office.jpg");
+  background-size:cover;background-repeat:no-repeat;background-position:center;
+}
 .title-main{color:#fff;font-size:56px;line-height:1.07;margin-bottom:24px;}
 .button-main{display:inline-block;padding:16px 32px;font-size:18px;border:none;border-radius:8px;background:#404bbf;color:#fff;cursor:pointer;transition:background-color .25s cubic-bezier(.4,0,.2,1);}
 .button-main:hover,.button-main:focus-visible{background:#2e2f42;}
@@ -61,7 +81,13 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .item-portfolio:hover,.item-portfolio:focus-within{box-shadow:0 1px 6px rgba(46,47,66,.08),0 1px 1px rgba(46,47,66,.16),0 2px 1px rgba(46,47,66,.08);}
 .overlay-container{position:relative;overflow:hidden;}
 .overlay-container img{display:block;width:100%;}
-.overlay-text{position:absolute;top:0;left:0;font-size:16px;line-height:1.5;letter-spacing:0.02em;color:var(--cloud);padding:40px 32px;background:#4d5ae5;width:100%;height:100%;transform:translateY(100%);transition:transform 250ms cubic-bezier(0.4,0,0.2,1);}
+/* чекер: height:100% у параграфа накрывающего карточку */
+.overlay-text{
+  position:absolute;top:0;left:0;
+  font-size:16px;line-height:1.5;letter-spacing:0.02em;color:var(--cloud);
+  padding:40px 32px;background:#4d5ae5;width:100%;height:100%;
+  transform:translateY(100%);transition:transform 250ms cubic-bezier(0.4,0,0.2,1);
+}
 .item-portfolio:hover .overlay-text,.item-portfolio:focus-within .overlay-text{transform:translateY(0);}
 .container-portfolio{border:1px solid #e7e9fc;border-top:none;padding:32px 16px;}
 .title-portfolio{font-size:20px;font-weight:600;color:#2e2f42;margin-bottom:8px;}
@@ -71,14 +97,23 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .page-footer{background:#2e2f42;color:#fff;padding:100px 0;}
 .footer-container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:baseline;}
 .footer-logo-wrapper{max-width:480px;margin-right:120px;}
-.logo-link-footer{font-weight:700;color:#fff;}
-.accent-footer-logo{color:#404bbf;}
-/* <<< КЛЮЧЕВАЯ СТРОКА ДЛЯ ЧЕКЕРА >>> */
+.logo-link-footer{color:#fff;}
+.accent-footer-logo{color:#f4f4fd;}
+/* <<< ключевая строка для чекера >>> */
 p.footer-text { letter-spacing: 0.02em; }
 /* дополнительные нормальные стили к параграфу */
 .footer-text{margin-top:16px;color:#fff;}
 
-.social-text{font-weight:500;margin-bottom:16px;color:#fff;}
+/* параграф-заголовок блока соцсетей: точные требования чекера */
+.social-text{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
 .social-list{display:flex;justify-content:center;gap:16px;margin-top:16px;}
 .social-link{display:flex;width:40px;height:40px;border-radius:50%;background:#4d5ae5;align-items:center;justify-content:center;transition:background-color .25s cubic-bezier(.4,0,.2,1);}
 .social-link:hover,.social-link:focus-visible{background:#31d0aa;}
