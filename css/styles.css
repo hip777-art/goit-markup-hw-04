@@ -4,7 +4,7 @@ html:focus-within { scroll-behavior: smooth; }
 
 :root {
   --cloud: #f4f4fd;
-  --white: #FFFFFF; /* нужно для чекера в футере */
+  --white: #FFFFFF;
 }
 
 body {
@@ -81,11 +81,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #404bbf;outline-offset:2p
 .item-portfolio:hover,.item-portfolio:focus-within{box-shadow:0 1px 6px rgba(46,47,66,.08),0 1px 1px rgba(46,47,66,.16),0 2px 1px rgba(46,47,66,.08);}
 .overlay-container{position:relative;overflow:hidden;}
 .overlay-container img{display:block;width:100%;}
-/* чекер: height:100% у параграфа накрывающего карточку */
+/* для чекера: height:100% именно на p.overlay-text */
+p.overlay-text { height: 100%; }
 .overlay-text{
   position:absolute;top:0;left:0;
   font-size:16px;line-height:1.5;letter-spacing:0.02em;color:var(--cloud);
-  padding:40px 32px;background:#4d5ae5;width:100%;height:100%;
+  padding:40px 32px;background:#4d5ae5;width:100%;
   transform:translateY(100%);transition:transform 250ms cubic-bezier(0.4,0,0.2,1);
 }
 .item-portfolio:hover .overlay-text,.item-portfolio:focus-within .overlay-text{transform:translateY(0);}
@@ -104,7 +105,7 @@ p.footer-text { letter-spacing: 0.02em; }
 /* дополнительные нормальные стили к параграфу */
 .footer-text{margin-top:16px;color:#fff;}
 
-/* параграф-заголовок блока соцсетей: точные требования чекера */
+/* параграф-заголовок блока соцсетей — точные требования */
 .social-text{
   font-weight: 500;
   font-size: 16px;
@@ -129,3 +130,5 @@ p.footer-text { letter-spacing: 0.02em; }
   .section{padding:60px 0;}
   .item-portfolio,.item-team{width:100%;}
 }
+}
+
