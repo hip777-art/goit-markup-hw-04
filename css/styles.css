@@ -108,7 +108,7 @@ p.overlay-text{
 
 /* ========== FOOTER ========= */
 .page-footer{background:#2e2f42;color:#fff;padding:100px 0;}
-.footer-container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:baseline;}
+.footer-container{display:flex;flex-wrap:wrap;gap:24px;align-items:baseline;}
 .footer-logo-wrapper{max-width:480px;margin-right:120px;}
 .logo-link-footer{color:#fff;}
 .accent-footer-logo{color:#f4f4fd;}
@@ -138,4 +138,5 @@ p.footer-text { letter-spacing: 0.02em; }
   .section{padding:60px 0;}
   .item-portfolio,.item-team{width:100%;}
 }
+
 
